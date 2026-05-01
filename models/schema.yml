@@ -1,0 +1,233 @@
+version: 2
+
+models:
+  - name: stg_raw_logs
+    description: >
+      Camada staging dos logs sintéticos de 28 poços. Esta tabela preserva as curvas principais
+      com tipos padronizados antes dos cálculos petrofísicos e elásticos.
+    columns:
+      - name: well_id
+        description: Identificador único do poço.
+        data_type: varchar
+        data_tests: [not_null]
+      - name: md_m
+        description: Profundidade medida em metros.
+        data_type: double
+        data_tests:
+          - not_null
+          - range_between:
+              min_value: 2500.0
+              max_value: 3100.0
+      - name: zone
+        description: Zona estratigráfica interpretada a partir da profundidade.
+        data_type: varchar
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['SEAL_TOP', 'RES_A', 'SEAL_MID', 'RES_B']
+      - name: gr_api
+        description: Gamma Ray em API. Usado como proxy simples para estimativa de Vsh.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0
+              max_value: 250
+      - name: rhob_gcc
+        description: Densidade bulk em g/cm³.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 1.8
+              max_value: 3.1
+      - name: nphi_vv
+        description: Porosidade neutrônica em fração v/v.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.0
+              max_value: 0.5
+      - name: dt_usft
+        description: Sonic compressional slowness em microssegundos por pé.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 30
+              max_value: 180
+      - name: dts_usft
+        description: Sonic shear slowness em microssegundos por pé.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 50
+              max_value: 300
+      - name: rt_ohmm
+        description: Resistividade profunda em ohm.m, usada no cálculo simplificado de Sw por Archie.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.1
+              max_value: 1000
+
+  - name: int_petrophysics
+    description: >
+      Modelo principal do catálogo petrofísico. Calcula Vp, Vs, densidade, porosidade, Vsh,
+      saturações, permeabilidade proxy, módulos elásticos dinâmicos, impedâncias, coeficiente de Biot
+      e difusividade hidráulica. As equações são simplificadas para fins didáticos e de treinamento.
+    columns:
+      - name: well_id
+        description: Identificador único do poço.
+        data_type: varchar
+        data_tests: [not_null]
+      - name: md_m
+        description: Profundidade medida em metros.
+        data_type: double
+        data_tests: [not_null]
+      - name: zone
+        description: Zona estratigráfica: selo superior, reservatório A, selo intermediário ou reservatório B.
+        data_type: varchar
+        data_tests:
+          - accepted_values:
+              values: ['SEAL_TOP', 'RES_A', 'SEAL_MID', 'RES_B']
+      - name: vp_ms
+        description: Velocidade compressional em m/s calculada por 304800 / DT.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 1500
+              max_value: 7000
+      - name: vs_ms
+        description: Velocidade cisalhante em m/s calculada por 304800 / DTS.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 800
+              max_value: 4500
+      - name: rho_kgm3
+        description: Densidade em kg/m³ convertida de RHOB g/cm³.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 1800
+              max_value: 3100
+      - name: phi
+        description: Porosidade final em fração, limitada entre 0.01 e 0.35 para evitar valores não físicos no exemplo.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.01
+              max_value: 0.35
+      - name: vsh
+        description: Volume de shale estimado por Gamma Ray normalizado e limitado entre 0 e 1.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.0
+              max_value: 1.0
+      - name: sw
+        description: Saturação de água estimada por Archie simplificado, limitada entre 0 e 1.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.0
+              max_value: 1.0
+      - name: so
+        description: Saturação de óleo simplificada por 1 - Sw.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.0
+              max_value: 1.0
+      - name: perm_md
+        description: Permeabilidade proxy em miliDarcy usando fórmula simplificada tipo Timur/Coates.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.001
+              max_value: 10000
+      - name: perm_m2
+        description: Permeabilidade em m² convertida de mD.
+        data_type: double
+      - name: shear_modulus_pa
+        description: Módulo de cisalhamento dinâmico em Pa, calculado como rho * Vs².
+        data_type: double
+      - name: bulk_modulus_pa
+        description: Módulo volumétrico dinâmico em Pa, calculado a partir de rho, Vp e Vs.
+        data_type: double
+      - name: young_modulus_pa
+        description: Módulo de Young dinâmico em Pa.
+        data_type: double
+      - name: poisson_ratio
+        description: Razão de Poisson dinâmica. Em rochas, valores físicos típicos ficam aproximadamente entre 0 e 0.5.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.0
+              max_value: 0.5
+      - name: rock_compressibility_1pa
+        description: Compressibilidade proxy da rocha, aproximada como 1/Kbulk.
+        data_type: double
+      - name: acoustic_impedance
+        description: Impedância acústica compressional, rho * Vp.
+        data_type: double
+      - name: shear_impedance
+        description: Impedância cisalhante, rho * Vs.
+        data_type: double
+      - name: vpvs_ratio
+        description: Razão Vp/Vs, útil para interpretação litológica e fluido-rocha.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 1.2
+              max_value: 4.0
+      - name: biot_alpha
+        description: Coeficiente de Biot simplificado, limitado entre 0.2 e 1.0.
+        data_type: double
+        data_tests:
+          - range_between:
+              min_value: 0.2
+              max_value: 1.0
+      - name: hydraulic_diffusivity_m2s
+        description: Difusividade hidráulica simplificada em m²/s, derivada de permeabilidade, porosidade, viscosidade e compressibilidade total proxy.
+        data_type: double
+
+  - name: mart_zone_quality
+    description: >
+      Mart analítico com ranking de qualidade por zona. Ajuda a comparar reservatórios e selos por porosidade,
+      saturação de água, permeabilidade, Vsh e propriedades elásticas médias.
+    columns:
+      - name: zone
+        description: Zona analisada.
+        data_tests:
+          - unique
+          - not_null
+      - name: avg_phi
+        description: Porosidade média da zona.
+      - name: avg_sw
+        description: Saturação média de água da zona.
+      - name: avg_perm_md
+        description: Permeabilidade média proxy da zona em mD.
+      - name: avg_young_gpa
+        description: Módulo de Young médio em GPa.
+
+  - name: mart_well_zone_quality
+    description: >
+      Mart analítico por poço e zona. Útil para ranking de melhores poços, comparação entre zonas e seleção
+      de intervalos promissores para estudos petrofísicos, geomecânicos e simulação.
+    columns:
+      - name: well_id
+        description: Identificador do poço.
+      - name: zone
+        description: Zona analisada no poço.
+      - name: avg_phi
+        description: Porosidade média por poço/zona.
+      - name: avg_perm_md
+        description: Permeabilidade média proxy por poço/zona.
+
+  - name: qc_invalid_petrophysics
+    description: >
+      Tabela de auditoria que lista registros suspeitos ou inválidos segundo regras físicas e operacionais.
+      Deve ficar vazia em uma execução saudável. Se possuir linhas, cada linha contém a coluna quality_issue
+      indicando o tipo de problema encontrado.
+    columns:
+      - name: quality_issue
+        description: Código do problema de qualidade encontrado no registro.

@@ -1,0 +1,228 @@
+[0m05:17:42.562917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c82a7b1c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c82a93b590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c82aae7890>]}
+
+
+============================== 05:17:42.566951 | d46d1b1d-3db9-4907-8687-a5a77b33e44f ==============================
+[0m05:17:42.566951 [info ] [MainThread]: Running with dbt=1.11.8
+[0m05:17:42.568282 [debug] [MainThread]: running dbt with arguments {'log_path': '/home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/logs', 'empty': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_cache_events': 'False', 'fail_fast': 'False', 'warn_error': 'None', 'profiles_dir': '/home/wolf/.dbt', 'version_check': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'introspect': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'debug': 'False', 'no_print': 'None', 'quiet': 'False', 'invocation_command': 'dbt debug'}
+[0m05:17:42.580762 [info ] [MainThread]: dbt version: 1.11.8
+[0m05:17:42.581415 [info ] [MainThread]: python version: 3.11.11
+[0m05:17:42.582133 [info ] [MainThread]: python path: /home/wolf/.pyenv/versions/fundamentos-python-ia/bin/python
+[0m05:17:42.582963 [info ] [MainThread]: os info: Linux-6.17.0-22-generic-x86_64-with-glibc2.39
+[0m05:17:42.587122 [info ] [MainThread]: Using profiles dir at /home/wolf/.dbt
+[0m05:17:42.587768 [info ] [MainThread]: Using profiles.yml file at /home/wolf/.dbt/profiles.yml
+[0m05:17:42.588525 [info ] [MainThread]: Using dbt_project.yml file at /home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/dbt_project.yml
+[0m05:17:42.748808 [info ] [MainThread]: Configuration:
+[0m05:17:42.749462 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m05:17:42.750634 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m05:17:42.751594 [info ] [MainThread]: Required dependencies:
+[0m05:17:42.752689 [debug] [MainThread]: Executing "git --help"
+[0m05:17:42.756724 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m05:17:42.757626 [debug] [MainThread]: STDERR: "b''"
+[0m05:17:42.758213 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m05:17:42.758837 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m05:17:42.759397 [info ] [MainThread]: [31m1 check failed:[0m
+[0m05:17:42.759981 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'petrophysics_catalog'
+
+
+[0m05:17:42.761329 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.28262353, "process_in_blocks": "0", "process_kernel_time": 0.263957, "process_mem_max_rss": "126404", "process_out_blocks": "24", "process_user_time": 3.914363}
+[0m05:17:42.762197 [debug] [MainThread]: Command `dbt debug` failed at 05:17:42.762051 after 0.28 seconds
+[0m05:17:42.762783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c82a7d3fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c82a7d3e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c82a851950>]}
+[0m05:17:42.763407 [debug] [MainThread]: Flushing usage events
+[0m05:17:43.677902 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:21:59.009113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d1995213890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d1995049510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d199504b6d0>]}
+
+
+============================== 05:21:59.013365 | 60ae7bb1-b4d8-41d6-89dd-6027b99139ec ==============================
+[0m05:21:59.013365 [info ] [MainThread]: Running with dbt=1.11.8
+[0m05:21:59.014694 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'debug': 'False', 'log_format': 'default', 'empty': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_cache_events': 'False', 'printer_width': '80', 'warn_error': 'None', 'write_json': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'log_path': '/home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/logs', 'no_print': 'None', 'invocation_command': 'dbt debug', 'introspect': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'profiles_dir': '/home/wolf/.dbt', 'version_check': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True'}
+[0m05:21:59.027340 [info ] [MainThread]: dbt version: 1.11.8
+[0m05:21:59.028033 [info ] [MainThread]: python version: 3.11.11
+[0m05:21:59.028698 [info ] [MainThread]: python path: /home/wolf/.pyenv/versions/fundamentos-python-ia/bin/python
+[0m05:21:59.029233 [info ] [MainThread]: os info: Linux-6.17.0-22-generic-x86_64-with-glibc2.39
+[0m05:21:59.192574 [info ] [MainThread]: Using profiles dir at /home/wolf/.dbt
+[0m05:21:59.193263 [info ] [MainThread]: Using profiles.yml file at /home/wolf/.dbt/profiles.yml
+[0m05:21:59.193944 [info ] [MainThread]: Using dbt_project.yml file at /home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/dbt_project.yml
+[0m05:21:59.196770 [info ] [MainThread]: adapter type: duckdb
+[0m05:21:59.197517 [info ] [MainThread]: adapter version: 1.10.1
+[0m05:21:59.353730 [info ] [MainThread]: Configuration:
+[0m05:21:59.354373 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m05:21:59.355019 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m05:21:59.355594 [info ] [MainThread]: Required dependencies:
+[0m05:21:59.356206 [debug] [MainThread]: Executing "git --help"
+[0m05:21:59.360374 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m05:21:59.361434 [debug] [MainThread]: STDERR: "b''"
+[0m05:21:59.362047 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m05:21:59.362684 [info ] [MainThread]: Connection:
+[0m05:21:59.363200 [info ] [MainThread]:   database: reservoir
+[0m05:21:59.363718 [info ] [MainThread]:   schema: main
+[0m05:21:59.364191 [info ] [MainThread]:   path: data/reservoir.duckdb
+[0m05:21:59.364700 [info ] [MainThread]:   config_options: None
+[0m05:21:59.365183 [info ] [MainThread]:   extensions: None
+[0m05:21:59.365700 [info ] [MainThread]:   settings: {}
+[0m05:21:59.366176 [info ] [MainThread]:   external_root: .
+[0m05:21:59.366706 [info ] [MainThread]:   use_credential_provider: None
+[0m05:21:59.367167 [info ] [MainThread]:   attach: None
+[0m05:21:59.367680 [info ] [MainThread]:   filesystems: None
+[0m05:21:59.368142 [info ] [MainThread]:   remote: None
+[0m05:21:59.368674 [info ] [MainThread]:   plugins: None
+[0m05:21:59.369139 [info ] [MainThread]:   disable_transactions: False
+[0m05:21:59.369831 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m05:21:59.541331 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m05:21:59.679339 [debug] [MainThread]: Using duckdb connection "debug"
+[0m05:21:59.680281 [debug] [MainThread]: On debug: select 1 as id
+[0m05:21:59.681075 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:21:59.702752 [debug] [MainThread]: SQL status: OK in 0.022 seconds
+[0m05:21:59.704318 [debug] [MainThread]: On debug: Close
+[0m05:21:59.705023 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m05:21:59.705729 [info ] [MainThread]: [32mAll checks passed![0m
+[0m05:21:59.707436 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.7858935, "process_in_blocks": "1800", "process_kernel_time": 0.337824, "process_mem_max_rss": "168716", "process_out_blocks": "24", "process_user_time": 4.352743}
+[0m05:21:59.709161 [debug] [MainThread]: Command `dbt debug` succeeded at 05:21:59.708882 after 0.79 seconds
+[0m05:21:59.710212 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m05:21:59.711000 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d19950afb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d19950afed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d19950afb10>]}
+[0m05:21:59.711789 [debug] [MainThread]: Flushing usage events
+[0m05:22:00.595080 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:23:22.398199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666c9457ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666c9457c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666c94578d0>]}
+
+
+============================== 05:23:22.402087 | aa2dae64-6dde-4069-b7ab-082577c78225 ==============================
+[0m05:23:22.402087 [info ] [MainThread]: Running with dbt=1.11.8
+[0m05:23:22.402981 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'target_path': 'None', 'introspect': 'True', 'static_parser': 'True', 'warn_error': 'None', 'write_json': 'True', 'log_format': 'default', 'log_path': '/home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/logs', 'cache_selected_only': 'False', 'no_print': 'None', 'invocation_command': 'dbt run', 'printer_width': '80', 'log_cache_events': 'False', 'profiles_dir': '/home/wolf/.dbt', 'debug': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'False', 'quiet': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False'}
+[0m05:23:22.738109 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aa2dae64-6dde-4069-b7ab-082577c78225', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666c92e1510>]}
+[0m05:23:22.831287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aa2dae64-6dde-4069-b7ab-082577c78225', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666cc381f50>]}
+[0m05:23:22.833520 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m05:23:23.021031 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m05:23:23.022200 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m05:23:23.023204 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'aa2dae64-6dde-4069-b7ab-082577c78225', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666c3367d90>]}
+[0m05:23:23.029042 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading petrophysics_catalog: schema.yml - Runtime Error
+    Syntax error near line 86
+    ------------------------------
+    83 |         data_type: double
+    84 |         data_tests: [not_null]
+    85 |       - name: zone
+    86 |         description: Zona estratigráfica: selo superior, reservatório A, selo intermediário ou reservatório B.
+    87 |         data_type: varchar
+    88 |         data_tests:
+    89 |           - accepted_values:
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 86, column 41
+[0m05:23:23.030545 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.71500695, "process_in_blocks": "408", "process_kernel_time": 0.295783, "process_mem_max_rss": "161040", "process_out_blocks": "16", "process_user_time": 4.264882}
+[0m05:23:23.031236 [debug] [MainThread]: Command `dbt run` failed at 05:23:23.031095 after 0.72 seconds
+[0m05:23:23.031813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666c935bf90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666c935bf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7666c9176fd0>]}
+[0m05:23:23.032388 [debug] [MainThread]: Flushing usage events
+[0m05:23:23.758628 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:23:28.331627 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77902d458050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77902d45bcd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77902d45b850>]}
+
+
+============================== 05:23:28.335538 | 4d5a92a3-53c8-46b9-8061-7b84b23d61d0 ==============================
+[0m05:23:28.335538 [info ] [MainThread]: Running with dbt=1.11.8
+[0m05:23:28.336670 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'introspect': 'True', 'empty': 'None', 'use_experimental_parser': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'fail_fast': 'False', 'profiles_dir': '/home/wolf/.dbt', 'log_format': 'default', 'warn_error': 'None', 'cache_selected_only': 'False', 'log_path': '/home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'use_colors': 'True', 'quiet': 'False', 'version_check': 'True', 'target_path': 'None', 'write_json': 'True', 'printer_width': '80', 'debug': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt test'}
+[0m05:23:28.657315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4d5a92a3-53c8-46b9-8061-7b84b23d61d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77902d15ef10>]}
+[0m05:23:28.751475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4d5a92a3-53c8-46b9-8061-7b84b23d61d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7790303a9e90>]}
+[0m05:23:28.753721 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m05:23:28.940686 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m05:23:28.941621 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m05:23:28.942232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '4d5a92a3-53c8-46b9-8061-7b84b23d61d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77902d0be310>]}
+[0m05:23:28.948302 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading petrophysics_catalog: schema.yml - Runtime Error
+    Syntax error near line 86
+    ------------------------------
+    83 |         data_type: double
+    84 |         data_tests: [not_null]
+    85 |       - name: zone
+    86 |         description: Zona estratigráfica: selo superior, reservatório A, selo intermediário ou reservatório B.
+    87 |         data_type: varchar
+    88 |         data_tests:
+    89 |           - accepted_values:
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 86, column 41
+[0m05:23:28.949817 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.7019329, "process_in_blocks": "0", "process_kernel_time": 0.29268, "process_mem_max_rss": "161032", "process_out_blocks": "8", "process_user_time": 4.209398}
+[0m05:23:28.950577 [debug] [MainThread]: Command `dbt test` failed at 05:23:28.950389 after 0.70 seconds
+[0m05:23:28.951131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77902d357d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77902d4526d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77902d452790>]}
+[0m05:23:28.951707 [debug] [MainThread]: Flushing usage events
+[0m05:23:29.613563 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:23:34.301737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd097557d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd09746f50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd09747310>]}
+
+
+============================== 05:23:34.305860 | 0dd20025-91bf-4cf5-b296-25b687a821e0 ==============================
+[0m05:23:34.305860 [info ] [MainThread]: Running with dbt=1.11.8
+[0m05:23:34.306734 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'warn_error': 'None', 'target_path': 'None', 'printer_width': '80', 'invocation_command': 'dbt docs generate', 'send_anonymous_usage_stats': 'True', 'log_path': '/home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/logs', 'partial_parse': 'True', 'debug': 'False', 'quiet': 'False', 'static_parser': 'True', 'indirect_selection': 'eager', 'profiles_dir': '/home/wolf/.dbt', 'no_print': 'None', 'empty': 'None', 'log_cache_events': 'False', 'write_json': 'True', 'version_check': 'True', 'introspect': 'True', 'fail_fast': 'False'}
+[0m05:23:34.628533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0dd20025-91bf-4cf5-b296-25b687a821e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd0948ee10>]}
+[0m05:23:34.725373 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0dd20025-91bf-4cf5-b296-25b687a821e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd0a6e7f90>]}
+[0m05:23:34.727612 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m05:23:34.926182 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m05:23:34.927121 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m05:23:34.927719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '0dd20025-91bf-4cf5-b296-25b687a821e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd0947e7d0>]}
+[0m05:23:34.933359 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading petrophysics_catalog: schema.yml - Runtime Error
+    Syntax error near line 86
+    ------------------------------
+    83 |         data_type: double
+    84 |         data_tests: [not_null]
+    85 |       - name: zone
+    86 |         description: Zona estratigráfica: selo superior, reservatório A, selo intermediário ou reservatório B.
+    87 |         data_type: varchar
+    88 |         data_tests:
+    89 |           - accepted_values:
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 86, column 41
+[0m05:23:34.934670 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.7153618, "process_in_blocks": "0", "process_kernel_time": 0.279575, "process_mem_max_rss": "160940", "process_out_blocks": "8", "process_user_time": 4.25155}
+[0m05:23:34.935415 [debug] [MainThread]: Command `dbt docs generate` failed at 05:23:34.935272 after 0.72 seconds
+[0m05:23:34.935987 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd035c7c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd09656150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfd0974e010>]}
+[0m05:23:34.936576 [debug] [MainThread]: Flushing usage events
+[0m05:23:35.607036 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:23:40.111485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79326c31cc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79326c31c550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79326c31d050>]}
+
+
+============================== 05:23:40.115522 | aeae30de-711d-41b5-b554-4d83c844b264 ==============================
+[0m05:23:40.115522 [info ] [MainThread]: Running with dbt=1.11.8
+[0m05:23:40.116363 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'target_path': 'None', 'log_format': 'default', 'log_path': '/home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/logs', 'static_parser': 'True', 'fail_fast': 'False', 'write_json': 'True', 'invocation_command': 'dbt docs serve', 'empty': 'None', 'no_print': 'None', 'profiles_dir': '/home/wolf/.dbt', 'printer_width': '80', 'version_check': 'True', 'log_cache_events': 'False', 'use_colors': 'True', 'quiet': 'False', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'debug': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m05:23:40.434679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aeae30de-711d-41b5-b554-4d83c844b264', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79326c4ab6d0>]}
+[0m05:23:40.529867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aeae30de-711d-41b5-b554-4d83c844b264', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79326d292690>]}
+[0m05:23:40.544221 [error] [MainThread]: Encountered an error:
+[Errno 2] No such file or directory: '/home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/target'
+[0m05:23:40.547074 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/wolf/.pyenv/versions/fundamentos-python-ia/lib/python3.11/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wolf/.pyenv/versions/fundamentos-python-ia/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wolf/.pyenv/versions/fundamentos-python-ia/lib/python3.11/site-packages/dbt/cli/requires.py", line 276, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wolf/.pyenv/versions/fundamentos-python-ia/lib/python3.11/site-packages/dbt/cli/requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wolf/.pyenv/versions/fundamentos-python-ia/lib/python3.11/site-packages/dbt/cli/requires.py", line 368, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wolf/.pyenv/versions/fundamentos-python-ia/lib/python3.11/site-packages/dbt/cli/main.py", line 309, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/wolf/.pyenv/versions/fundamentos-python-ia/lib/python3.11/site-packages/dbt/task/docs/serve.py", line 15, in run
+    os.chdir(self.config.project_target_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/wolf/Documentos/desenvolvimento/ciencia-dados-freestyle/petrophysics_dbt_catalog/target'
+
+[0m05:23:40.549061 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 0.520742, "process_in_blocks": "72", "process_kernel_time": 0.222899, "process_mem_max_rss": "159576", "process_out_blocks": "8", "process_user_time": 4.046183}
+[0m05:23:40.550356 [debug] [MainThread]: Command `dbt docs serve` failed at 05:23:40.550170 after 0.52 seconds
+[0m05:23:40.551017 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79326c17f7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79326c1d9a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79326c313d10>]}
+[0m05:23:40.551704 [debug] [MainThread]: Flushing usage events
+[0m05:23:41.239589 [debug] [MainThread]: An error was encountered while trying to flush usage events

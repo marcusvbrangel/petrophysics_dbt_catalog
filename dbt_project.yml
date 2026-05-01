@@ -1,0 +1,25 @@
+name: 'petrophysics_catalog'
+version: '1.0.0'
+config-version: 2
+
+profile: 'petrophysics_catalog'
+
+model-paths: ['models']
+analysis-paths: ['analyses']
+test-paths: ['tests']
+macro-paths: ['macros']
+
+clean-targets:
+  - 'target'
+  - 'dbt_packages'
+
+models:
+  petrophysics_catalog:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table
+    quality:
+      +materialized: table

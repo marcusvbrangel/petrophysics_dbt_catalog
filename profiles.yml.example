@@ -1,0 +1,7 @@
+petrophysics_catalog:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/reservoir.duckdb
+      threads: 4

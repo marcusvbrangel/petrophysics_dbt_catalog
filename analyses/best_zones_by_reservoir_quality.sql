@@ -8,5 +8,5 @@ select
     avg_perm_md,
     avg_vsh,
     avg_young_gpa
-from {{ ref('mart_zone_quality') }}
+from {{ portable_ref('mart_zone_quality') }}
 order by avg_phi desc, avg_perm_md desc;

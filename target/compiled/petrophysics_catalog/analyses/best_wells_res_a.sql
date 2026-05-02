@@ -7,6 +7,6 @@ select
     avg_vsh,
     avg_young_gpa,
     avg_vpvs_ratio
-from "reservoir"."main"."mart_well_zone_quality"
+from "main"."mart_well_zone_quality"
 where zone = 'RES_A'
 order by avg_phi desc, avg_perm_md desc, avg_so desc;

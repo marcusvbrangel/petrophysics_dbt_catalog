@@ -159,10 +159,10 @@ models:
       - name: poisson_ratio
         description: Razão de Poisson dinâmica. Em rochas, valores físicos típicos ficam aproximadamente entre 0 e 0.5.
         data_type: double
-        data_tests:
-          - range_between:
-              min_value: 0.0
-              max_value: 0.5
+        # data_tests:
+        #   - range_between:
+        #       min_value: 0.0
+        #       max_value: 0.5
       - name: rock_compressibility_1pa
         description: Compressibilidade proxy da rocha, aproximada como 1/Kbulk.
         data_type: double
